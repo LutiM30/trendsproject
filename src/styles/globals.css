@@ -1,0 +1,380 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --navigation-height: 4.5rem;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+}
+
+:root,
+.light,
+.light-theme {
+  --red-1: #fffcfb;
+  --red-2: #fff8f6;
+  --red-3: #ffeae7;
+  --red-4: #ffdad3;
+  --red-5: #ffcac2;
+  --red-6: #ffb9af;
+  --red-7: #fda499;
+  --red-8: #f6887b;
+  --red-9: #e40b18;
+  --red-10: #d40000;
+  --red-11: #dd000f;
+  --red-12: #661a16;
+
+  --red-a1: #ff400004;
+  --red-a2: #ff390009;
+  --red-a3: #ff200018;
+  --red-a4: #ff29002c;
+  --red-a5: #ff22003d;
+  --red-a6: #ff200050;
+  --red-a7: #fa1c0066;
+  --red-a8: #ee1a0084;
+  --red-a9: #e3000ef4;
+  --red-a10: #d40000;
+  --red-a11: #dd000f;
+  --red-a12: #580400e9;
+
+  --red-contrast: #fff;
+  --red-surface: #fff6f4cc;
+  --red-indicator: #e40b18;
+  --red-track: #e40b18;
+}
+
+@supports (color: color(display-p3 1 1 1)) {
+  @media (color-gamut: p3) {
+    :root,
+    .light,
+    .light-theme {
+      --red-1: oklch(99.4% 0.0037 27.57);
+      --red-2: oklch(98.4% 0.009 27.57);
+      --red-3: oklch(95.5% 0.0252 27.57);
+      --red-4: oklch(92.7% 0.0553 27.57);
+      --red-5: oklch(89.4% 0.0731 27.57);
+      --red-6: oklch(85.5% 0.0891 27.57);
+      --red-7: oklch(80.5% 0.1081 27.57);
+      --red-8: oklch(74.3% 0.1364 27.57);
+      --red-9: oklch(58% 0.2334 27.57);
+      --red-10: oklch(53.6% 0.2334 27.57);
+      --red-11: oklch(56.2% 0.2334 27.57);
+      --red-12: oklch(34.3% 0.1093 27.57);
+
+      --red-a1: color(display-p3 0.7569 0.2667 0.0235 / 0.016);
+      --red-a2: color(display-p3 0.8941 0.2392 0.0235 / 0.036);
+      --red-a3: color(display-p3 0.8314 0.1412 0.0118 / 0.091);
+      --red-a4: color(display-p3 0.8627 0.1647 0.0039 / 0.169);
+      --red-a5: color(display-p3 0.8667 0.1412 0.0039 / 0.232);
+      --red-a6: color(display-p3 0.8588 0.1333 0.0039 / 0.302);
+      --red-a7: color(display-p3 0.851 0.1255 0.0039 / 0.389);
+      --red-a8: color(display-p3 0.8157 0.1176 0 / 0.502);
+      --red-a9: color(display-p3 0.7843 0.0314 0 / 0.84);
+      --red-a10: color(display-p3 0.7333 0.0627 0 / 0.895);
+      --red-a11: color(display-p3 0.7647 0.0353 0 / 0.863);
+      --red-a12: color(display-p3 0.298 0.0275 0 / 0.899);
+
+      --red-contrast: #fff;
+      --red-surface: color(display-p3 0.9961 0.9647 0.9608 / 0.8);
+      --red-indicator: oklch(58% 0.2334 27.57);
+      --red-track: oklch(58% 0.2334 27.57);
+    }
+  }
+}
+
+/* Navigation Menu specific styles */
+.NavigationMenuRoot {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  z-index: 1;
+}
+
+.NavigationMenuList {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  padding: 4px;
+  border-radius: 6px;
+  list-style: none;
+  box-shadow: 0 2px 10px var(--blackA7);
+  margin: 0;
+}
+
+.NavigationMenuTrigger,
+.NavigationMenuLink {
+  padding: 8px 12px;
+  outline: none;
+  user-select: none;
+  font-weight: 500;
+  line-height: 1;
+  border-radius: 4px;
+  font-size: 15px;
+  color: var(--red-11); /* Updated to use red color */
+}
+
+.NavigationMenuTrigger:focus,
+.NavigationMenuLink:focus {
+  box-shadow: 0 0 0 2px var(--red-7); /* Updated to use red color */
+}
+
+.NavigationMenuTrigger:hover,
+.NavigationMenuLink:hover {
+  background-color: var(--red-3); /* Updated to use red color */
+}
+
+.NavigationMenuContent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  animation-duration: 250ms;
+  animation-timing-function: ease;
+}
+
+.NavigationMenuContent[data-motion='from-start'] {
+  animation-name: enterFromLeft;
+}
+
+.NavigationMenuContent[data-motion='from-end'] {
+  animation-name: enterFromRight;
+}
+
+.NavigationMenuContent[data-motion='to-start'] {
+  animation-name: exitToLeft;
+}
+
+.NavigationMenuContent[data-motion='to-end'] {
+  animation-name: exitToRight;
+}
+
+.NavigationMenuIndicator {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 10px;
+  top: 100%;
+  overflow: hidden;
+  z-index: 1;
+  transition: width, transform 250ms ease;
+}
+
+.NavigationMenuIndicator[data-state='visible'] {
+  animation: fadeIn 200ms ease;
+}
+
+.NavigationMenuIndicator[data-state='hidden'] {
+  animation: fadeOut 200ms ease;
+}
+
+.NavigationMenuViewport {
+  position: relative;
+  transform-origin: top center;
+  margin-top: 10px;
+  width: 100%;
+  background-color: white;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px var(--blackA7);
+  height: var(--radix-navigation-menu-viewport-height);
+  transition: width, height 300ms ease;
+}
+
+.NavigationMenuViewport[data-state='open'] {
+  animation: scaleIn 200ms ease;
+}
+
+.NavigationMenuViewport[data-state='closed'] {
+  animation: scaleOut 200ms ease;
+}
+
+@keyframes enterFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes enterFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes exitToRight {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+}
+
+@keyframes exitToLeft {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: rotateX(-30deg) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: rotateX(0deg) scale(1);
+  }
+}
+
+@keyframes scaleOut {
+  from {
+    opacity: 1;
+    transform: rotateX(0deg) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: rotateX(-10deg) scale(0.95);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes share-icon {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes share-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes lock-icon-1 {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  33%,
+  66% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+@keyframes lock-icon-2 {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  33% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  66% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+@keyframes lock-icon-3 {
+  0%,
+  33% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  66%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-lock-icon-1 {
+  animation: lock-icon-1 3s infinite;
+}
+
+.animate-lock-icon-2 {
+  animation: lock-icon-2 3s infinite;
+}
+
+.animate-lock-icon-3 {
+  animation: lock-icon-3 3s infinite;
+}
+
+.animate-share-icon {
+  animation: share-icon 2s ease-in-out infinite;
+}
+
+.animate-share-ring {
+  animation: share-ring 2s ease-out infinite;
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
