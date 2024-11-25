@@ -133,7 +133,7 @@ export const TypewriterEffectSmooth = ({
         className='overflow-hidden'
         initial={{ width: '0%' }}
         whileInView={{ width: 'fit-content' }}
-        transition={{ duration: 1, ease: 'linear', delay: 1 }}
+        transition={{ duration: 2, ease: 'linear', delay: 1 }}
       >
         <Text as='span' size='3' className='whitespace-nowrap inline-block'>
           {renderWords()}
