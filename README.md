@@ -1,3 +1,5 @@
+BECAUSE I'm (Mitul) is using different PCs everyday commit author names might be different
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
