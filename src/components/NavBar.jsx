@@ -10,9 +10,11 @@ const NavBar = () => {
         <img src={logo} alt='TapACall' className='max-w-48' />
         <NavigationMenu.Root className='z-50 flex items-center justify-center flex-grow p-1'>
           <NavigationMenu.List className='flex items-center m-0 list-none'>
+          <NavBarItem to='/help' title='Help' />
             <NavBarItem to='/' title='Home' />
             <NavBarItem to='/blogs' title='Blog' />
             <NavBarItem to='/terms' title='Terms' />
+            <NavBarItem to='/about' title='About' />
 
             <NavigationMenu.Indicator className='top-full z-[1] flex h-[10px] items-end justify-center overflow-hidden transition-[width,transform_250ms_ease] data-[state=hidden]:animate-fadeOut data-[state=visible]:animate-fadeIn'>
               <div className='relative top-[70%] h-[10px] w-[10px] rotate-45 rounded-tl-[2px] bg-card' />
