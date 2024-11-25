@@ -19,18 +19,18 @@ const Features = () => {
         style={{
           backgroundColor: 'var(--red-1)',
         }}
-        className='flex justify-center items-center'
+        className='flex items-center justify-center'
       >
         <Container
           size='3'
-          className='flex justify-center items-center mx-auto mt-5'
+          className='flex items-center justify-center mx-auto mt-5'
         >
           <Flex
             gap='4'
-            className='flex-col justify-center items-center text-center md:text-center'
+            className='flex-col items-center justify-center text-center md:text-center'
           >
             {/* Text Section */}
-            <Box className='flex-1 flex flex-col items-center text-foreground'>
+            <Box className='flex flex-col items-center flex-1 text-foreground'>
               <Flex direction='column' gap='3' className='w-full md:w-auto'>
                 <Heading size='8' align='Center'>
                   The easiest way to record phone calls on your smartphone
@@ -48,22 +48,6 @@ const Features = () => {
             {/* Image Section */}
             <Box className='flex-1'>
               <ImageSliderButtons />
-            </Box>
-            {/* Image Section */}
-            <Box className='flex-1'>
-              <a
-                href='/features'
-                target='_self'
-                className='red-cta w-button'
-                rel='noreferrer'
-                style={{ cursor: 'pointer' }}
-              >
-                <Button size='4'>
-                  <Strong>
-                    <Em>See All Features</Em>
-                  </Strong>
-                </Button>
-              </a>
             </Box>
           </Flex>
         </Container>
