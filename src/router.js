@@ -17,9 +17,12 @@ const importPages = () => {
 const pages = importPages();
 
 const createRoute = (path) => {
-  const normalizedPath = path === 'index' ? '' : path.toLowerCase();
+  const normalizedPath = path
+    .replace(/^index$/, '') // Handle "index.jsx" as root path
+    .replace(/\[([^\]]+)]/g, ':$1'); // Convert "[id]" to ":id"
+
   return {
-    path: `/${normalizedPath}`,
+    path: `/${normalizedPath.toLowerCase()}`,
     element: React.createElement(pages[path]),
   };
 };

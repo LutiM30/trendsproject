@@ -11,7 +11,7 @@ const NavBar = () => {
         <NavigationMenu.Root className='z-50 flex items-center justify-center flex-grow p-1'>
           <NavigationMenu.List className='flex items-center m-0 list-none'>
             <NavBarItem to='/' title='Home' />
-            <NavBarItem to='/blog' title='Blog' />
+            <NavBarItem to='/blogs' title='Blog' />
             <NavBarItem to='/terms' title='Terms' />
 
             <NavigationMenu.Indicator className='top-full z-[1] flex h-[10px] items-end justify-center overflow-hidden transition-[width,transform_250ms_ease] data-[state=hidden]:animate-fadeOut data-[state=visible]:animate-fadeIn'>
