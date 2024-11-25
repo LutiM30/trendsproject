@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   Box,
+  Button,
   Container,
   Em,
   Flex,
@@ -47,6 +48,22 @@ const Features = () => {
             {/* Image Section */}
             <Box className='flex-1'>
               <ImageSliderButtons />
+            </Box>
+            {/* Image Section */}
+            <Box className='flex-1'>
+              <a
+                href='/features'
+                target='_self'
+                className='red-cta w-button'
+                rel='noreferrer'
+                style={{ cursor: 'pointer' }}
+              >
+                <Button size='4'>
+                  <Strong>
+                    <Em>See All Features</Em>
+                  </Strong>
+                </Button>
+              </a>
             </Box>
           </Flex>
         </Container>

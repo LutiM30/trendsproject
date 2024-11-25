@@ -12,6 +12,7 @@ const NavBar = () => {
           <NavigationMenu.List className='center m-0 flex list-none items-center'>
             <NavBarItem to='/' title='Home' />
             <NavBarItem to='/help' title='Help' />
+            <NavBarItem to='/features' title='Features' />
             <NavigationMenu.Indicator className='top-full z-[1] flex h-[10px] items-end justify-center overflow-hidden transition-[width,transform_250ms_ease] data-[state=hidden]:animate-fadeOut data-[state=visible]:animate-fadeIn'>
               <div className='relative top-[70%] h-[10px] w-[10px] rotate-45 rounded-tl-[2px] bg-card' />
             </NavigationMenu.Indicator>
