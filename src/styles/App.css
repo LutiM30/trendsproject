@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 #orbit_container {
   width: 8%;
   margin: 0 auto;

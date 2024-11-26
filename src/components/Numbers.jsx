@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { Box, Container, Em, Flex, Heading, Text } from '@radix-ui/themes';
-import NumberFlow from '@number-flow/react';
-import useIntersection from '../hooks/useIntersection';
+import React, { useEffect, useState } from "react";
+import { Box, Container, Em, Flex, Heading, Text } from "@radix-ui/themes";
+import NumberFlow from "@number-flow/react";
+import useIntersection from "../hooks/useIntersection";
 
 export const Counter = (props) => {
   const forwardedRef = React.useRef(null);
-  const isVisible = useIntersection(forwardedRef, '0px');
+  const isVisible = useIntersection(forwardedRef, "0px");
   const { from, to, suffix } = props;
   const [counter, setCounter] = useState(from);
   const [view, setView] = useState(false);
@@ -49,7 +49,7 @@ export const Counter = (props) => {
             value={displayValue}
             suffix={suffix}
             format={{
-              trailingZeroDisplay: 'stripIfInteger',
+              trailingZeroDisplay: "stripIfInteger",
             }}
           />
         </div>
@@ -62,19 +62,19 @@ export const Counter = (props) => {
 
 export const MetricCard = ({ number, suffix, text }) => (
   <Flex
-    direction='column'
-    align='center'
-    className='w-full rounded-3xl shadow-lg shadow-red-100 min-w-[280px] max-w-[320px] p-6 bg-[var(--red-12)]'
+    direction="column"
+    align="center"
+    className="w-full rounded-3xl shadow-lg shadow-red-100 min-w-[280px] max-w-[320px] p-6 bg-[var(--red-12)]"
   >
-    <Box className='mb-4'>
-      <Heading size='8' className='text-red-50'>
+    <Box className="mb-4">
+      <Heading size="8" className="text-red-50">
         <Em>
-          <Counter from={0} to={number || 25.7} suffix={suffix || 'million+'} />
+          <Counter from={0} to={number || 25.7} suffix={suffix || "million+"} />
         </Em>
       </Heading>
     </Box>
-    <Text size='4' className='text-center text-red-50'>
-      {text || 'calls recorded'}
+    <Text size="4" className="text-center text-red-50">
+      {text || "calls recorded"}
     </Text>
   </Flex>
 );
@@ -82,33 +82,33 @@ export const MetricCard = ({ number, suffix, text }) => (
 export const metrics = [
   {
     number: 25.7,
-    suffix: 'million+',
-    text: 'calls recorded',
+    suffix: "million+",
+    text: "calls recorded",
   },
   {
     number: 3.73,
-    suffix: 'million+',
-    text: 'hours of recording completed',
+    suffix: "million+",
+    text: "hours of recording",
   },
   {
     number: 205000,
-    suffix: '+',
-    text: 'transcriptions processed',
+    suffix: "+",
+    text: "transcriptions processed",
   },
 ];
 const Numbers = () => {
   return (
-    <Box py='6' className='bg-[var(--red-2)]'>
-      <Container size='3' className='mx-auto'>
-        <Flex direction='column' gap='6' className='items-center text-center'>
-          <Heading size='8' className='text-foreground'>
+    <Box py="6" className="bg-[var(--red-2)]">
+      <Container size="3" className="mx-auto">
+        <Flex direction="column" gap="6" className="items-center text-center">
+          <Heading size="8" className="text-foreground">
             The trusted choice for call recording
           </Heading>
 
           <Flex
-            direction={{ initial: 'column', md: 'row' }}
-            gap='4'
-            className='justify-center w-full'
+            direction={{ initial: "column", md: "row" }}
+            gap="4"
+            className="justify-center w-full items-center lg:items-start"
           >
             {metrics.map((metric, index) => (
               <MetricCard key={index} {...metric} />
